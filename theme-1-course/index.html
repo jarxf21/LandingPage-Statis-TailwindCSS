@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductivityMaster - Double Your Output</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // User provided palette:
+                        // 1D1616 (Dark Background)
+                        // 8E1616 (Dark Red)
+                        // D84040 (Bright Red - Primary)
+                        // EEEEEE (Light Text)
+                        page: {
+                            bg: '#1D1616',  // Main background
+                            card: '#241a1a', // Slightly lighter for cards
+                        },
+                        brand: {
+                            500: '#D84040', // Main Action (Bright Red)
+                            600: '#b93535', // Hover
+                            700: '#8E1616', // Darker Red for accents/borders
+                        },
+                        text: {
+                            main: '#EEEEEE',
+                            muted: '#d1d1d1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1D1616; }
+        ::-webkit-scrollbar-thumb { background: #8E1616; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D84040; }
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-page-bg text-text-main antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden">
+
+    <!-- Sticky CTA (Mobile/Desktop) -->
+    <div class="fixed bottom-4 right-4 z-50 animate-bounce cursor-pointer">
+        <a href="#pricing" class="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-6 rounded-full shadow-[0_0_15px_rgba(216,64,64,0.6)] transition-all transform hover:scale-105 flex items-center gap-2 border border-brand-700">
+            <span>🚀 Join Now</span>
+        </a>
+    </div>
+
+    <!-- 1. Headline (Hero) -->
+    <section class="relative pt-20 pb-32 overflow-hidden" data-aos="fade-down" data-aos-duration="1000">
+        <!-- Red glow effect -->
+        <div class="absolute top-0 transform -translate-x-1/2 left-1/2 w-full h-[500px] bg-brand-700 opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-700/30 text-brand-500 text-sm font-semibold mb-6 border border-brand-700/50">For Ambitious Professionals</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+                Double Your Output <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-red-400">In Just 30 Days.</span>
+            </h1>
+            <p class="text-xl text-text-muted mb-10 max-w-2xl mx-auto">
+                Stop drowning in busywork. Master the exact system used by top 1% performers to reclaim 20+ hours a week.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#pricing" class="bg-brand-500 hover:bg-brand-600 text-white text-lg font-bold py-4 px-8 rounded-lg transition-all shadow-[0_0_20px_rgba(216,64,64,0.5)] hover:shadow-[0_0_30px_rgba(216,64,64,0.7)]">
+                    Start Your Transformation
+                </a>
+                <a href="#about" class="bg-white/5 hover:bg-white/10 text-white text-lg font-semibold py-4 px-8 rounded-lg transition-all border border-white/10">
+                    Learn More
+                </a>
+            </div>
+            
+            <div class="mt-16 relative mx-auto max-w-5xl">
+                <div class="absolute -inset-1 bg-gradient-to-b from-brand-500 to-transparent rounded-2xl blur opacity-20"></div>
+                <img src="./images/hero.png" alt="Productivity Workspace" class="relative rounded-2xl shadow-2xl border border-white/10 w-full object-cover max-h-[600px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-page-bg to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Pain/Problem -->
+    <section class="py-24 bg-page-bg border-t border-white/5" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Does this sound like you?</h2>
+                <p class="text-text-muted">You're working harder than ever, but feeling further behind.</p>
+            </div>
+            
+            <!-- Mobile Swipe Container -->
+            <div class="relative group">
+                <button onclick="document.getElementById('pain-scroll').scrollBy({left: -300, behavior: 'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-500/20 hover:bg-brand-500/40 text-white p-2 rounded-full backdrop-blur-sm z-10 md:hidden -ml-4 border border-brand-500/50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="document.getElementById('pain-scroll').scrollBy({left: 300, behavior: 'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-500/20 hover:bg-brand-500/40 text-white p-2 rounded-full backdrop-blur-sm z-10 md:hidden -mr-4 border border-brand-500/50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+                <div id="pain-scroll" class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-6 px-6 pb-6 gap-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:p-0 md:m-0">
+                <!-- Pain 1 -->
+                <div class="flex-none w-[85vw] md:w-auto snap-center bg-page-card p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-colors group relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
+                    <div class="w-12 h-12 bg-brand-700/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-500/20 transition-all border border-brand-700/20">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Task Paralysis</h3>
+                    <p class="text-text-muted">Staring at a mile-long to-do list and not knowing where to start, creating anxiety.</p>
+                </div>
+                
+                <!-- Pain 2 -->
+                <div class="flex-none w-[85vw] md:w-auto snap-center bg-page-card p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-colors group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
+                    <div class="w-12 h-12 bg-brand-700/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-500/20 transition-all border border-brand-700/20">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Mental Burnout</h3>
+                    <p class="text-text-muted">Ending every day exhausted but feeling like you accomplished nothing of value.</p>
+                </div>
+                
+                <!-- Pain 3 -->
+                <div class="flex-none w-[85vw] md:w-auto snap-center bg-page-card p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-colors group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all"></div>
+                    <div class="w-12 h-12 bg-brand-700/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-500/20 transition-all border border-brand-700/20">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">No Personal Time</h3>
+                    <p class="text-text-muted">Sacrificing weekends and evenings just to catch up on email and Slack.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Solution -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-700/5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <span class="text-brand-500 font-bold uppercase tracking-wider text-sm">Introducing ProductivityMaster</span>
+                    <h2 class="text-4xl font-bold text-white mt-4 mb-6">The System Built for High Performance.</h2>
+                    <p class="text-text-muted text-lg mb-8">
+                        It's not about "working harder". It's about designing a workflow that works FOR you. Our comprehensive dashboard and course system helps you prioritize, execute, and automate.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-text-muted">Centralized Command Center</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-text-muted">Automated Daily Planning</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-text-muted">Deep Work Protocols</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <div class="absolute inset-0 bg-brand-500/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <img src="./images/solution.png" alt="Dashboard Interface" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Benefits Breakdown (Feature vs Benefit) -->
+    <section class="py-24 bg-page-bg border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-white mb-16">Why This Works</h2>
+            
+            <div class="space-y-6 max-w-4xl mx-auto">
+                <!-- Benefit 1 -->
+                <div class="flex flex-col md:flex-row items-center bg-page-card p-6 rounded-xl border border-white/5 hover:border-brand-500/30 transition-colors gap-6">
+                    <div class="w-full md:w-1/3 md:border-r border-white/10 md:pr-6">
+                        <h4 class="text-brand-500 font-bold mb-1 text-xs uppercase tracking-widest">Feature</h4>
+                        <p class="text-white font-semibold text-lg">Lifetime Access</p>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-white font-bold mb-1 text-xs uppercase tracking-widest">Benefit</h4>
+                        <p class="text-text-muted">No pressure. Learn at your own pace and revisit whenever. You own this system forever.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="flex flex-col md:flex-row items-center bg-page-card p-6 rounded-xl border border-white/5 hover:border-brand-500/30 transition-colors gap-6">
+                    <div class="w-full md:w-1/3 md:border-r border-white/10 md:pr-6">
+                        <h4 class="text-brand-500 font-bold mb-1 text-xs uppercase tracking-widest">Feature</h4>
+                        <p class="text-white font-semibold text-lg">Weekly Calls</p>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-white font-bold mb-1 text-xs uppercase tracking-widest">Benefit</h4>
+                        <p class="text-text-muted">Actually stick to the plan. External accountability keeps you from falling off the wagon.</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="flex flex-col md:flex-row items-center bg-page-card p-6 rounded-xl border border-white/5 hover:border-brand-500/30 transition-colors gap-6">
+                    <div class="w-full md:w-1/3 md:border-r border-white/10 md:pr-6">
+                        <h4 class="text-brand-500 font-bold mb-1 text-xs uppercase tracking-widest">Feature</h4>
+                        <p class="text-white font-semibold text-lg">Notion Templates</p>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-white font-bold mb-1 text-xs uppercase tracking-widest">Benefit</h4>
+                        <p class="text-text-muted">Save 10+ hours of setup. Just duplicate and start organizing your life immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Who is this for? -->
+    <section class="py-24 bg-page-bg border-t border-white/5" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <!-- For You -->
+                <div class="bg-page-card p-8 rounded-2xl border-l-4 border-brand-500 shadow-lg" data-aos="flip-left" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <span class="text-brand-500">✔</span> Perfect For You If...
+                    </h3>
+                    <ul class="space-y-3 text-text-muted">
+                        <li class="flex items-center gap-2">You handle multiple projects at once.</li>
+                        <li class="flex items-center gap-2">You feel capable of achieving more.</li>
+                        <li class="flex items-center gap-2">You are ready to invest in yourself.</li>
+                    </ul>
+                </div>
+
+                <!-- Not For You -->
+                <div class="bg-page-card p-8 rounded-2xl border-l-4 border-white/20 opacity-70 hover:opacity-100 transition-opacity">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                        <span class="text-text-muted">✖</span> NOT For You If...
+                    </h3>
+                    <ul class="space-y-3 text-text-muted">
+                        <li class="flex items-center gap-2">You want a "get rich quick" hack.</li>
+                        <li class="flex items-center gap-2">You aren't willing to change habits.</li>
+                        <li class="flex items-center gap-2">You prefer chaos over structure.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Social Proof -->
+    <section class="py-24 bg-page-bg border-t border-white/5" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Trusted by 5,000+ High Performers</h2>
+                <div class="flex justify-center items-center gap-1 text-brand-500 mb-4">
+                    ★★★★★ <span class="text-text-muted ml-2 text-sm">(4.9/5 Average Rating)</span>
+                </div>
+            </div>
+
+            <!-- Mobile Swipe Container -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-6 px-6 pb-6 gap-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:p-0 md:m-0">
+                <!-- Review 1 -->
+                <div class="flex-none w-[80vw] md:w-auto snap-center bg-page-card p-6 rounded-xl border border-white/5" data-aos="fade-up" data-aos-delay="0">
+                    <p class="text-text-muted italic mb-6">"I used to work 60 hour weeks. Now I work 35 and get MORE done. The template system is a lifesaver."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-brand-700/50 rounded-full flex items-center justify-center text-white font-bold">SJ</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Sarah Jenkins</h4>
+                            <p class="text-white/40 text-xs">UX Designer</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Review 2 -->
+                 <div class="flex-none w-[80vw] md:w-auto snap-center bg-page-card p-6 rounded-xl border border-white/5" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-text-muted italic mb-6">"Finally a course that isn't just fluff. The deep work protocols added $10k to my monthly revenue."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-brand-700/50 rounded-full flex items-center justify-center text-white font-bold">MC</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Mike Chen</h4>
+                            <p class="text-white/40 text-xs">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Review 3 -->
+                 <div class="flex-none w-[80vw] md:w-auto snap-center bg-page-card p-6 rounded-xl border border-white/5" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-text-muted italic mb-6">"The only productivity system designed for creative brains. I don't feel stifled, just organized."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-brand-700/50 rounded-full flex items-center justify-center text-white font-bold">ER</div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm">Elena Rodriguez</h4>
+                            <p class="text-white/40 text-xs">Writer</p>
+                            </div>
+            </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 rounded-2xl overflow-hidden h-64 relative border border-white/10">
+                 <img src="./images/proof.png" alt="Community of Professionals" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none bg-black/20">
+                     <span class="bg-black/50 text-white px-6 py-2 rounded-full backdrop-blur-sm border border-white/10">Join the community</span>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="py-24 bg-page-bg border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-white mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-page-card rounded-lg border border-white/5 p-4 open:border-brand-500 transition-colors">
+                    <summary class="flex justify-between items-center font-semibold text-white cursor-pointer list-none">
+                        <span>How much time does this take per week?</span>
+                        <span class="transition group-open:rotate-180 text-brand-500">▼</span>
+                    </summary>
+                    <p class="text-text-muted mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        We recommend allocating about 2-3 hours per week to go through the modules and implement the changes. It's designed to be done alongside your actual work, not on top of it.
+                    </p>
+                </details>
+
+                <details class="group bg-page-card rounded-lg border border-white/5 p-4 open:border-brand-500 transition-colors">
+                    <summary class="flex justify-between items-center font-semibold text-white cursor-pointer list-none">
+                        <span>Is this suitable for students?</span>
+                        <span class="transition group-open:rotate-180 text-brand-500">▼</span>
+                    </summary>
+                    <p class="text-text-muted mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        Absolutely. While the examples are professional, the core principles of time blocking and energy management apply perfectly to academic studies.
+                    </p>
+                </details>
+
+                <details class="group bg-page-card rounded-lg border border-white/5 p-4 open:border-brand-500 transition-colors">
+                    <summary class="flex justify-between items-center font-semibold text-white cursor-pointer list-none">
+                        <span>Do I need to buy expensive software?</span>
+                        <span class="transition group-open:rotate-180 text-brand-500">▼</span>
+                    </summary>
+                    <p class="text-text-muted mt-4 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        No. We use free tools (notion, google calendar) for everything. You don't need to spend a dime on extra software.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA + Warranty -->
+    <section id="pricing" class="py-24 bg-gradient-to-t from-black to-brand-700/20 text-center border-t border-white/5">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <span class="text-brand-500 font-bold tracking-widest text-sm uppercase mb-4 block animate-pulse">Limited Time Offer</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Stop Dreaming. Start Doing.</h2>
+            <p class="text-text-muted text-lg mb-10">Get full access to the ProductivityMaster System including all templates and the community.</p>
+            
+            <div class="bg-page-card p-8 rounded-2xl border border-brand-500 shadow-[0_0_50px_rgba(216,64,64,0.3)] mb-12 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
+                
+                <div class="flex justify-center items-baseline gap-2 mb-6">
+                    <span class="text-5xl font-bold text-white">$97</span>
+                    <span class="text-white/30 line-through text-xl">$297</span>
+                </div>
+                <button class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-4 rounded-xl text-xl shadow-lg transition-transform transform hover:-translate-y-1 mb-4">
+                    Get Instant Access
+                </button>
+                <div class="flex flex-col md:flex-row justify-center gap-4 text-xs text-text-muted">
+                    <span class="flex items-center justify-center gap-1"><svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> One-time payment</span>
+                    <span class="flex items-center justify-center gap-1"><svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Lifetime updates</span>
+                    <span class="flex items-center justify-center gap-1"><svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Secure checkout</span>
+                </div>
+            </div>
+
+            <!-- Risk Reversal -->
+            <div class="flex items-center justify-center gap-4 text-text-muted text-sm border border-white/10 p-4 rounded-xl max-w-lg mx-auto bg-white/5">
+                <svg class="w-10 h-10 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <div class="text-left">
+                    <strong class="text-white block">30-Day Money-Back Guarantee</strong>
+                    If you don't double your productivity, we'll refund you. No questions asked.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-white/5 text-center text-white/30 text-sm">
+        <p>&copy; 2024 ProductivityMaster. All rights reserved. <br class="md:hidden"/> <span class="hidden md:inline">|</span> <a href="https://fajar-dev.vercel.app/" target="_blank" class="hover:text-brand-500 transition-colors">Created by Fajar Dev</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLife - Choose Health</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+    </style>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans overflow-x-hidden">
+
+    <!-- Sticky CTA -->
+    <div class="fixed bottom-6 right-6 z-50 animate-bounce">
+        <a href="#plans" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-2">
+            <span>🥗 Start Eating Healthy</span>
+        </a>
+    </div>
+
+    <!-- 1. Headline (Hero) -->
+    <section class="pt-24 pb-32 relative overflow-hidden" data-aos="fade-down" data-aos-duration="1000">
+         <!-- Abstract shapes -->
+         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-emerald-100 rounded-full opacity-50 blur-3xl z-0"></div>
+         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-orange-100 rounded-full opacity-50 blur-3xl z-0"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <span class="text-emerald-600 font-bold uppercase tracking-wider text-sm mb-4 inline-block bg-emerald-50 px-3 py-1 rounded-full">No Cooking. No Cleaning. Just Eating.</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+                Chef-Cooked Healthy Meals, <br/> <span class="text-emerald-500">Delivered Fresh Daily.</span>
+            </h1>
+            <p class="text-xl text-slate-500 mb-10 max-w-2xl mx-auto">
+                We source local organic ingredients and craft macro-balanced meals that taste amazing. Delivered to your door every morning.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="#plans" class="bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-emerald-500/30 transition-all">
+                    View Weekly Menu
+                </a>
+                <a href="#process" class="bg-white border-2 border-slate-200 hover:border-emerald-500 text-slate-600 hover:text-emerald-500 text-lg font-bold py-4 px-10 rounded-full transition-all">
+                    How It Works
+                </a>
+            </div>
+            
+            <div class="relative mx-auto max-w-5xl rounded-3xl overflow-hidden shadow-2xl">
+                 <img src="./images/hero.png" alt="Healthy Meal Prep" class="w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Pain/Problem -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why is eating healthy so hard?</h2>
+                <p class="text-slate-500">You know you should eat better, but life gets in the way.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 w-full md:w-80 hover:-translate-y-2 transition-transform duration-300">
+                    <span class="text-4xl mb-4 block">⏰</span>
+                    <h3 class="text-xl font-bold mb-2">Zero Time to Cook</h3>
+                    <p class="text-slate-500 text-sm">Between work, gym, and commute, spending 2 hours in the kitchen is impossible.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 w-full md:w-80 hover:-translate-y-2 transition-transform duration-300">
+                    <span class="text-4xl mb-4 block">😩</span>
+                    <h3 class="text-xl font-bold mb-2">Confusing Diets</h3>
+                    <p class="text-slate-500 text-sm">Keto? Paleo? Vegan? Calculating macros is a full-time job in itself.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 w-full md:w-80 hover:-translate-y-2 transition-transform duration-300">
+                    <span class="text-4xl mb-4 block">🍕</span>
+                    <h3 class="text-xl font-bold mb-2">Junk Food Guilt</h3>
+                    <p class="text-slate-500 text-sm">When you're hungry and tired, ordering greasy takeout is the easiest option.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Solution -->
+    <section id="process" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <img src="./images/solution.png" alt="Meal Box Delivery" class="rounded-3xl shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h5 class="text-emerald-500 font-bold mb-2 uppercase tracking-wide">The GreenLife Solution</h5>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">Your Personal Chef in a Box.</h2>
+                    <p class="text-slate-500 text-lg mb-8">
+                        We take care of the planning, shopping, cooking, and measuring. You just heat (if needed) and eat.
+                    </p>
+                    <ul class="space-y-4">
+                         <li class="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl">
+                             <div class="bg-white p-2 rounded-full shadow-sm text-emerald-500 font-bold">1</div>
+                             <span class="font-semibold text-slate-700">Choose your meal plan preference</span>
+                         </li>
+                         <li class="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl">
+                            <div class="bg-white p-2 rounded-full shadow-sm text-emerald-500 font-bold">2</div>
+                            <span class="font-semibold text-slate-700">Chefs cook your meals fresh</span>
+                        </li>
+                        <li class="flex items-center gap-4 p-4 bg-emerald-50 rounded-xl">
+                            <div class="bg-white p-2 rounded-full shadow-sm text-emerald-500 font-bold">3</div>
+                            <span class="font-semibold text-slate-700">Delivered to your doorstep by 7 AM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Benefit Breakdown -->
+    <section class="py-24 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">Taste the Difference</h2>
+            
+            <div class="relative group">
+                <button onclick="document.getElementById('features-scroll').scrollBy({left: -300, behavior: 'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500 text-emerald-700 hover:text-white p-2 rounded-full backdrop-blur-sm z-10 md:hidden -ml-2 border border-emerald-500/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="document.getElementById('features-scroll').scrollBy({left: 300, behavior: 'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 bg-emerald-500/20 hover:bg-emerald-500 text-emerald-700 hover:text-white p-2 rounded-full backdrop-blur-sm z-10 md:hidden -mr-2 border border-emerald-500/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+                <div id="features-scroll" class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-6 px-6 pb-6 gap-4 md:grid md:grid-cols-3 md:gap-12 md:overflow-visible md:p-0 md:m-0">
+                <div class="flex-none w-[80vw] md:w-auto snap-center border-l-4 border-emerald-500 pl-6" data-aos="fade-up" data-aos-delay="0">
+                    <h3 class="text-xl font-bold mb-2 text-emerald-400">Sous-Vide Cooking</h3>
+                    <p class="text-slate-400">
+                        <strong class="text-white block mb-1">Feature:</strong> Slow cooked at precise temperatures.
+                        <br/>
+                        <strong class="text-white block mt-2">Benefit:</strong> Chicken so tender you don't need a knife. Never dry, always juicy.
+                    </p>
+                </div>
+                <div class="flex-none w-[80vw] md:w-auto snap-center border-l-4 border-emerald-500 pl-6">
+                    <h3 class="text-xl font-bold mb-2 text-emerald-400">Macro-Calculated</h3>
+                    <p class="text-slate-400">
+                        <strong class="text-white block mb-1">Feature:</strong> Exact protein/carb/fat listed on every box.
+                        <br/>
+                        <strong class="text-white block mt-2">Benefit:</strong> Hit your fitness goals on autopilot without tracking apps.
+                    </p>
+                </div>
+                <div class="flex-none w-[80vw] md:w-auto snap-center border-l-4 border-emerald-500 pl-6">
+                    <h3 class="text-xl font-bold mb-2 text-emerald-400">Local Sourcing</h3>
+                    <p class="text-slate-400">
+                        <strong class="text-white block mb-1">Feature:</strong> Ingredients from farms within 50 miles.
+                        <br/>
+                        <strong class="text-white block mt-2">Benefit:</strong> More nutrients, better taste, and supporting local community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Who is this for? -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-emerald-50 rounded-3xl p-10 shadow-inner">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Perfect For...</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2">✅ Busy professionals working 50h+ weeks</li>
+                            <li class="flex items-center gap-2">✅ Fitness enthusiasts needing high protein</li>
+                            <li class="flex items-center gap-2">✅ Parents who want healthy kids meals</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6">NOT For...</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2">❌ People who love grocery shopping</li>
+                            <li class="flex items-center gap-2">❌ Extremely picky eaters (Chef's choice)</li>
+                            <li class="flex items-center gap-2">❌ Those looking for cheapest possible food</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Social Proof -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+             <div class="text-center mb-12">
+                 <h2 class="text-3xl font-bold text-slate-900">Over 10,000 Meals Served</h2>
+             </div>
+             <div class="grid md:grid-cols-2 gap-12 items-center">
+                 <div class="relative">
+                     <div class="absolute inset-0 bg-emerald-500 rounded-2xl transform rotate-3"></div>
+                     <img src="./images/proof.png" alt="Happy Family" class="relative rounded-2xl shadow-lg w-full transform -rotate-3 transition hover:rotate-0 duration-500">
+                 </div>
+                 <div class="space-y-8">
+                     <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                         <p class="italic text-slate-600 mb-4">"I lost 5kg in my first month just by switching to GreenLife for lunch. The food is actually tasty!"</p>
+                         <h4 class="font-bold text-slate-900">- Jessica K., Marketing Director</h4>
+                     </div>
+                     <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <p class="italic text-slate-600 mb-4">"My kids actually eat the vegetables. Whatever magic you use, it works. Saves me 10 hours a week."</p>
+                        <h4 class="font-bold text-slate-900">- Mark T., Father of 3</h4>
+                    </div>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="py-24 bg-emerald-900 text-white">
+         <div class="container mx-auto px-6 max-w-3xl">
+             <h2 class="text-3xl font-bold text-center mb-12">Got Questions?</h2>
+             <div class="grid gap-6">
+                 <div class="bg-emerald-800 p-6 rounded-xl">
+                     <h4 class="font-bold text-lg mb-2">What if I have allergies?</h4>
+                     <p class="text-emerald-100">We have gluten-free, nut-free, and dairy-free options available. You can set your restrictions in your profile.</p>
+                 </div>
+                 <div class="bg-emerald-800 p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-2">Can I skip a week?</h4>
+                    <p class="text-emerald-100">Yes, you can pause or cancel anytime. Just let us know by Tuesday for the following week.</p>
+                </div>
+                <div class="bg-emerald-800 p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-2">How do I heat the meals?</h4>
+                    <p class="text-emerald-100">Most meals are ready to eat cold (salads) or heat in the microwave for 2 minutes. Oven instructions are also included.</p>
+                </div>
+             </div>
+         </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section id="plans" class="py-24 bg-emerald-50 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Eat Better. Feel Better.</h2>
+            <p class="text-xl text-slate-600 mb-10">Start your trial week today and get 50% off your first box.</p>
+
+            <div class="bg-white max-w-md mx-auto rounded-3xl shadow-2xl overflow-hidden">
+                <div class="bg-emerald-500 py-4 text-white font-bold">MOST POPULAR</div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-slate-900">5-Day Week Plan</h3>
+                    <p class="text-slate-500 mb-6">Lunch & Dinner (10 Meals)</p>
+                    <div class="text-5xl font-bold text-slate-900 mb-2">$99<span class="text-lg font-normal text-slate-500">/week</span></div>
+                    <p class="text-emerald-600 font-bold text-sm mb-8">That's just $9.90 per meal!</p>
+                    
+                    <button class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl transition-all">
+                        Select This Plan
+                    </button>
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <div class="flex items-center justify-center gap-2 text-sm text-slate-500">
+                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            First Day Satisfaction Guarantee (Love it or refund)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 text-center text-slate-400 text-sm border-t border-slate-100">
+        <p>&copy; 2024 GreenLife Catering. Eat Fresh. <span class="mx-2">•</span> <a href="https://fajar-dev.vercel.app/" target="_blank" class="hover:text-emerald-500 transition-colors font-medium">Designed by Fajar Dev</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

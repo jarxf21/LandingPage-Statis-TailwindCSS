@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Light That Adapts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            500: '#d4af37',
+                            600: '#b4941f',
+                        },
+                        stone: {
+                            850: '#1c1917',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for chrome/safari/opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+    </style>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased font-sans overflow-x-hidden">
+
+    <!-- Sticky CTA -->
+    <div class="fixed bottom-6 right-6 z-50 animate-bounce">
+        <a href="#buy" class="bg-stone-900 text-white hover:bg-gold-500 hover:text-white font-serif italic py-3 px-8 rounded-full shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2 border border-stone-700">
+            <span>Shop Now - 20% Off</span>
+        </a>
+    </div>
+
+    <!-- 1. Headline -->
+    <section class="min-h-screen relative flex items-center pt-20 pb-20 overflow-hidden bg-stone-100" data-aos="fade-down" data-aos-duration="1000">
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-stone-200 hidden lg:block"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <span class="text-gold-600 font-bold tracking-widest uppercase text-xs mb-4 block">Redefining Illumination</span>
+                    <h1 class="font-serif text-6xl md:text-7xl text-stone-900 leading-[1.1] mb-8">
+                        Light That Adapts <br/> To Your Flow.
+                    </h1>
+                    <p class="text-stone-600 text-lg mb-10 max-w-md leading-relaxed">
+                        Say goodbye to eye strain. Lumina adjusts its temperature and brightness automatically to sync with your circadian rhythm.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#buy" class="bg-stone-900 text-white px-8 py-4 rounded-none hover:bg-gold-500 transition-colors duration-300 font-serif italic text-lg">
+                            Get Lumina
+                        </a>
+                        <a href="#details" class="px-8 py-4 border border-stone-900 text-stone-900 hover:bg-stone-200 transition-colors duration-300">
+                            View Features
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="relative z-10">
+                         <img src="./images/hero.png" alt="Lumina Lamp" class="w-full h-auto shadow-2xl rounded-sm">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gold-500/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Pain/Problem -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                     <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?q=80&w=2787&auto=format&fit=crop" alt="Eye Strain" class="w-full h-[500px] object-cover grayscale opacity-80 rounded-sm">
+                </div>
+                <div>
+                    <h2 class="font-serif text-4xl text-stone-900 mb-6">Are you ruining your eyes in the dark?</h2>
+                    <p class="text-stone-600 text-lg mb-8">
+                        Most desk lamps flicker invisibly and emit harsh blue light that disrupts your melatonin production.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="text-red-500 text-2xl font-serif">01.</span>
+                            <div>
+                                <h4 class="font-bold text-stone-900">Digital Eye Strain</h4>
+                                <p class="text-stone-500 text-sm">Headaches and blurred vision after just 2 hours of work.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-red-500 text-2xl font-serif">02.</span>
+                            <div>
+                                <h4 class="font-bold text-stone-900">Poor Sleep Quality</h4>
+                                <p class="text-stone-500 text-sm">Blue light exposure at night mocks daylight, keeping you awake.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Solution -->
+    <section id="details" class="py-24 bg-stone-900 text-white relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-gold-500 italic">The Lumina Difference</h2>
+                <p class="text-stone-400">Precision engineering meets biological science.</p>
+            </div>
+
+            <div class="relative group">
+                <button onclick="document.getElementById('features-scroll').scrollBy({left: -300, behavior: 'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800 text-gold-500 p-2 rounded-full backdrop-blur-sm z-10 md:hidden -ml-2 border border-gold-500/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="document.getElementById('features-scroll').scrollBy({left: 300, behavior: 'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 bg-stone-800/50 hover:bg-stone-800 text-gold-500 p-2 rounded-full backdrop-blur-sm z-10 md:hidden -mr-2 border border-gold-500/20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+                <div id="features-scroll" class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-6 px-6 pb-6 gap-4 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:p-0 md:m-0">
+                <div class="flex-none w-[80vw] md:w-auto snap-center text-center p-8 border border-stone-800 hover:border-gold-500/50 transition-colors duration-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-gold-500 text-3xl mb-4">☀</div>
+                    <h3 class="font-serif text-2xl mb-3">Auto-Dimming</h3>
+                    <p class="text-stone-400 text-sm">Sensors detect ambient light and adjust brightness instantly to maintain optimal lux levels.</p>
+                </div>
+                <div class="flex-none w-[80vw] md:w-auto snap-center text-center p-8 border border-stone-800 hover:border-gold-500/50 transition-colors duration-500">
+                    <div class="text-gold-500 text-3xl mb-4">🎨</div>
+                    <h3 class="font-serif text-2xl mb-3">True Color (CRI 95+)</h3>
+                    <p class="text-stone-400 text-sm">See colors exactly as they are. Perfect for designers, artists, and readers.</p>
+                </div>
+                <div class="flex-none w-[80vw] md:w-auto snap-center text-center p-8 border border-stone-800 hover:border-gold-500/50 transition-colors duration-500">
+                    <div class="text-gold-500 text-3xl mb-4">🌙</div>
+                    <h3 class="font-serif text-2xl mb-3">Circadian Sync</h3>
+                    <p class="text-stone-400 text-sm">Automatically shifts from cool focus light to warm relaxing tones as the evening progresses.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <img src="./images/solution.png" alt="Lumina Detail" class="w-full max-h-[600px] object-cover rounded-sm opacity-90 mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Benefit Breakdown -->
+    <section class="py-24 bg-stone-50">
+        <div class="container mx-auto px-6 max-w-4xl">
+             <h2 class="font-serif text-3xl text-stone-900 text-center mb-12">More Than Just Metal & Glass</h2>
+             
+             <div class="bg-white p-8 shadow-xl rounded-sm mb-6 flex flex-col md:flex-row items-center gap-8">
+                 <div class="md:w-1/3 text-center md:text-right">
+                     <h4 class="font-bold text-stone-400 uppercase tracking-widest text-xs">Technical Feature</h4>
+                     <p class="font-serif text-xl mt-1">Aircraft-Grade Aluminum</p>
+                 </div>
+                 <div class="hidden md:block w-px h-12 bg-stone-200"></div>
+                 <div class="md:w-2/3">
+                     <h4 class="font-bold text-gold-600 uppercase tracking-widest text-xs">Real World Benefit</h4>
+                     <p class="text-stone-600">Built to last a lifetime. It won't wobble, fade, or break like cheap plastic alternatives.</p>
+                 </div>
+             </div>
+
+             <div class="bg-white p-8 shadow-xl rounded-sm mb-6 flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 text-center md:text-right">
+                    <h4 class="font-bold text-stone-400 uppercase tracking-widest text-xs">Technical Feature</h4>
+                    <p class="font-serif text-xl mt-1">Zero-Flicker Driver</p>
+                </div>
+                <div class="hidden md:block w-px h-12 bg-stone-200"></div>
+                <div class="md:w-2/3">
+                    <h4 class="font-bold text-gold-600 uppercase tracking-widest text-xs">Real World Benefit</h4>
+                    <p class="text-stone-600">Eliminate those subtle headaches. Work for 8+ hours without feeling eye fatigue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Qualification -->
+    <section class="py-20 bg-stone-200">
+        <div class="container mx-auto px-6">
+             <div class="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+                 <div class="bg-white p-10 flex-1 shadow-lg">
+                     <h3 class="font-serif text-2xl mb-6">Designed For...</h3>
+                     <ul class="space-y-4">
+                         <li class="flex gap-3 items-center"><span class="text-green-600">✔</span> Designers requiring color accuracy.</li>
+                         <li class="flex gap-3 items-center"><span class="text-green-600">✔</span> Readers who love late-night books.</li>
+                         <li class="flex gap-3 items-center"><span class="text-green-600">✔</span> Minimalists who value aesthetics.</li>
+                     </ul>
+                 </div>
+                 <div class="bg-stone-850 text-stone-400 p-10 flex-1 shadow-lg">
+                    <h3 class="font-serif text-2xl text-white mb-6">NOT For...</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-center"><span class="text-red-500">✖</span> People looking for $10 plastic lamps.</li>
+                        <li class="flex gap-3 items-center"><span class="text-red-500">✖</span> Those who don't care about eye health.</li>
+                        <li class="flex gap-3 items-center"><span class="text-red-500">✖</span> Environments with zero desk space.</li>
+                    </ul>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- 6. Social Proof -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-center text-4xl mb-16">Seen In Modern Homes</h2>
+            <div class="flex flex-col md:flex-row gap-6 mb-16">
+                <!-- Image 1 -->
+                <div class="relative group overflow-hidden md:w-1/3 h-80">
+                    <img src="./images/proof.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Home 1">
+                    <div class="absolute bottom-0 left-0 bg-white p-4 m-4 shadow-lg">
+                        <p class="font-serif italic">"Completes my setup."</p>
+                    </div>
+                </div>
+                 <!-- Image 2 -->
+                 <div class="relative group overflow-hidden md:w-1/3 h-80">
+                    <img src="./images/hero.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Home 2">
+                    <div class="absolute bottom-0 left-0 bg-white p-4 m-4 shadow-lg">
+                       <p class="font-serif italic">"ArchDigest Feature"</p>
+                    </div>
+                 </div>
+                 <!-- Image 3 -->
+                 <div class="relative group overflow-hidden md:w-1/3 h-80">
+                    <img src="./images/solution.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Home 3">
+                    <div class="absolute bottom-0 left-0 bg-white p-4 m-4 shadow-lg">
+                       <p class="font-serif italic">"TechCrunch Review"</p>
+                    </div>
+                 </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-2xl font-serif italic text-stone-700 mb-6">"Finally a lamp that looks as good as the light it produces. The build quality is unmatched at this price point."</p>
+                <div class="font-bold text-stone-900">— Marcus V., Senior Architect</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="py-20 bg-stone-50 border-t border-stone-200">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="font-serif text-3xl text-center mb-12">Common Questions</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 shadow-sm border border-stone-100">
+                    <h4 class="font-bold mb-2">How long does the LED last?</h4>
+                    <p class="text-stone-600">The LED is rated for 50,000 hours. That's over 10 years of normal use. You'll never need to change a bulb.</p>
+                </div>
+                <div class="bg-white p-6 shadow-sm border border-stone-100">
+                    <h4 class="font-bold mb-2">Is it compatible with 220V?</h4>
+                    <p class="text-stone-600">Yes, Lumina comes with a universal power adapter (100-240V) that works worldwide.</p>
+                </div>
+                <div class="bg-white p-6 shadow-sm border border-stone-100">
+                    <h4 class="font-bold mb-2">Can I adjust the height?</h4>
+                    <p class="text-stone-600">Yes, the arm uses a counter-balance mechanism allowing you to position it at any height or angle effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. CTA -->
+    <section id="buy" class="py-24 bg-stone-900 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-5xl md:text-6xl text-gold-500 mb-6">Upgrade Your Light.</h2>
+            <p class="text-stone-400 text-xl mb-12">Join 10,000+ satisfied customers.</p>
+            
+            <div class="inline-block bg-stone-800 p-8 border border-stone-700 max-w-md w-full relative">
+                <div class="absolute -top-4 -right-4 bg-gold-500 text-stone-900 font-bold py-1 px-4 transform rotate-3 shadow-lg">Save $40</div>
+                <div class="text-4xl font-serif mb-2">$159 <span class="text-stone-600 line-through text-2xl">$199</span></div>
+                <p class="text-stone-500 text-sm mb-6">Free Shipping Worldwide</p>
+                <button class="w-full bg-white text-stone-900 font-serif italic font-bold py-4 hover:bg-gold-500 hover:text-white transition-colors duration-300">
+                    Add to Cart
+                </button>
+                <div class="mt-6 flex items-center justify-center gap-2 text-xs text-stone-500">
+                    <span>🛡 2-Year Warranty</span>
+                    <span>•</span>
+                    <span>30-Day Home Trial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-950 text-stone-600 py-12 text-center border-t border-stone-900">
+        <p class="font-serif italic">Lumina Light Corp &copy; 2024 <span class="mx-2">|</span> <a href="https://fajar-dev.vercel.app/" target="_blank" class="hover:text-gold-500 transition-colors not-italic font-sans text-xs uppercase tracking-widest">Fajar Dev</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
